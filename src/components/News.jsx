@@ -26,8 +26,11 @@ export class News extends Component {
             loading: false,
             page: 1,
         }
+
+
     }
     async componentDidMount() {
+
         console.log("cdm");
         let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=8fa5a6b844dc4d3b9ba97ae76e82682d&pageSize=${this.props.pageSize}`;
         this.setState({ loading: true })
@@ -36,9 +39,11 @@ export class News extends Component {
         console.log(parsedData);
         this.setState({ articles: parsedData.articles, totalResults: parsedData.totalResults, loading: false })
 
+
     }
     handlePreviousClick = async () => {
         console.log("Previous");
+
         let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=8fa5a6b844dc4d3b9ba97ae76e82682d&page=${this.state.page - 1}&pageSize=${this.props.pageSize}`;
         this.setState({ loading: true })
         let data = await fetch(url);
@@ -52,9 +57,11 @@ export class News extends Component {
             loading: false
         })
 
+
     }
     handleNextClick = async () => {
         console.log("Next")
+
         if (!(this.state.page + 1 > Math.ceil(this.state.totalResults / this.props.pageSize))) {
 
 
@@ -70,6 +77,7 @@ export class News extends Component {
                 articles: parsedData.articles,
                 loading: false
             })
+
         }
 
     }

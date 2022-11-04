@@ -9,8 +9,11 @@ import {
 
 
 } from "react-router-dom"
+import LoadingBar from 'react-top-loading-bar'
 
 export default class App extends Component {
+
+
   render() {
     return (
       <div>
@@ -19,15 +22,16 @@ export default class App extends Component {
 
 
 
+
           <Routes>
-            <Route exact path="/" element={<News pageSize={9} key="general" country="in" category="general" />} />
-            <Route exact path="/newsapp" element={<News pageSize={9} key="general" country="in" category="general" />} />
-            <Route exact path="/sports" element={<News pageSize={9} key="sports" country="in" category="sports" />} />
-            <Route exact path="/science" element={<News pageSize={9} key="science" country="in" category="science" />} />
-            <Route exact path="/entertainment" element={<News pageSize={9} key="entertainment" country="in" category="entertainment" />} />
-            <Route exact path="/business" element={<News pageSize={9} key="business" country="in" category="business" />} />
-            <Route exact path="/technology" element={<News pageSize={9} key="technology" country="in" category="technology" />} />
-            <Route exact path="/health" element={<News pageSize={9} key="health" country="in" category="health" />} />
+            <Route exact path="/" element={<News pageSize={9} apiKey={this.apiKey} key="general" country="in" category="general" />} />
+            <Route exact path="/newsapp" element={<News pageSize={9} apiKey={this.apiKey} key="general" country="in" category="general" />} />
+            <Route exact path="/sports" element={<News pageSize={9} apiKey={this.apiKey} key="sports" country="in" category="sports" />} />
+            <Route exact path="/science" element={<News pageSize={9} apiKey={this.apiKey} key="science" country="in" category="science" />} />
+            <Route exact path="/entertainment" element={<News pageSize={9} apiKey={this.apiKey} key="entertainment" country="in" category="entertainment" />} />
+            <Route exact path="/business" element={<News pageSize={9} apiKey={this.apiKey} key="business" country="in" category="business" />} />
+            <Route exact path="/technology" element={<News pageSize={9} apiKey={this.apiKey} key="technology" country="in" category="technology" />} />
+            <Route exact path="/health" element={<News pageSize={9} apiKey={this.apiKey} key="health" country="in" category="health" />} />
           </Routes>
         </Router>
 
